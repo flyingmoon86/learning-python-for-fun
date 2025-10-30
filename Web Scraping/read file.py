@@ -1,10 +1,18 @@
 #Python 提供了内置函数 open() 来操作文件。
+import os
+
+# 切换到脚本所在目录
+script_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(script_dir)
+
+# 打印当前工作目录和文件位置以便调试
+
+
 #下面是一个简单的示例，展示如何使用 open() 函数读取和写入文件。    
 #推荐使用 with语句（会自动关闭文件）：
 with open('example.txt', 'w') as file:
     file.write('Hello, World!')
     # 打开文件时使用 'w' 模式会覆盖原有内容
-
 # ===============================
 #模式	含义
 #"r"	只读（默认）
@@ -31,4 +39,7 @@ def copy_first_10_lines(src_file, dst_file):
 
 # 主程序入口
 if __name__ == "__main__":
-    copy_first_10_lines("data.txt", "output.txt")
+    print("当前工作目录:", os.getcwd())
+    print("当前脚本位置:", __file__)
+    copy_first_10_lines('data.txt', 'output.txt')
+    
