@@ -17,7 +17,7 @@ def linear_regression_gradient_descent(X: np.ndarray, y: np.ndarray, alpha: floa
     y = y.reshape(-1, 1) 	# Make sure y is a column vector
     theta = np.zeros((n, 1))
 
-    # TODO: Your code here
+    # TODO: 
     for _ in range(iterations):
         predictions = X.dot(theta)               # Shape (m, 1)
         errors = predictions - y                 # Shape (m, 1)
